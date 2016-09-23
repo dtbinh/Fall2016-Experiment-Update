@@ -41,6 +41,8 @@ display('Sensor Reading:')
 values
 clear values
 
+% timer
+timer(counter) = toc;
 
 
 %% Run Algorithm

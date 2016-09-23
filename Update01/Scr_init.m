@@ -183,6 +183,8 @@ display('Pause for diffusion...');
 pause;
 display('Pause twice...');
 pause;
+% timer
+tic;
 
 
 %% Collect Necessary Data for Algorithm / Init DataSet
@@ -207,6 +209,7 @@ for agent = 1 : AgentNumber
 	DataSet( counter , dataLen*(agent-1)+8 : dataLen*(agent-1)+12 ) = ...
 		[ 0 , 0 , 0 , 0 , 0 ];% l/r speed, flag
 end
+timer(counter) = toc;
 % Sencond group of data
 counter = 2;
 DataSet( counter , 1 : dataLen*agent ) = ...
@@ -225,6 +228,7 @@ for agent = 1 : AgentNumber
 	DataSet( counter , dataLen*(agent-1)+8 : dataLen*(agent-1)+12 ) = ...
 		[ 0 , 0 , 0 , 0 , 0 ];% l/r speed, flag
 end
+timer(counter) = toc;
 clear x y rot
 
 
