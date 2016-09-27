@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{graphicx} 
+\begin{document}
+\section*{A brief report of experiment results last week}
+\vspace{2cm}
+\subsection*{a. Tracking Results}
+Seven of eleven attempts are not fail last weekend, and five of them are worth to show. 
+According to the tracking behavior about the robot, experiments no.1(blue),5(yellow),6(purple) in figure \ref{figTrackGood} is reasonable. 
+In those results agent may get lost temporarily, and all the agents will finally move towards the source.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{TrackingresultGood} 
+\caption{Tracking Results of Khepera Robot}\label{figTrackGood}
+\end{figure}
+\\In figure \ref{figTrackGood}, and in figure \ref{figTrackPoor}, the tails correspond to the tracking trajectories of robots, 
+and the short line in their heads are shown the final orientation of those Khepera robots. 
+Symbol '+' in the center of every four agents is the geographic center of them, and another symbol '*' corresponds to the estimation direction for those groups. \\
+Experiment no.2(cyan) and experiment no.7(gold), in figure \ref{figTrackPoor}, are failed to find the source with gradient results. 
+The boundary in the corner of $(2,2)$ may possible influence the results.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{TrackingresultPoor} 
+\caption{Tracking Results of Khepera Robot}\label{figTrackPoor}
+\end{figure}
+\subsection*{b. Estimation and Error}
+Comparing the results from experiment no.1,5,6 or the results from experiment no.2,7, there are no significant differences of estimation 
+shown in figure \ref{figEstGood} and figure \ref{figEstPoor}. 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{EstimationresultGood} 
+\caption{Estimation Results of Khepera Robot}\label{figEstGood}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{EstimationresultPoor} 
+\caption{Estimation Results of Khepera Robot}\label{figEstPoor}
+\end{figure}
+\\
+It seems that, if the group of robots fail to reaching the source, the estimation results may become more diverse than they success. 
+However, we cannot say that the estimations are directly or explicitly influenced by the gradient. 
+One possible reason for this phenomenon is that the esitmation and the calculation of gradient are both influenced by the boundary of our experimental field. \\
+Another interesting phenomenon shown in figure \ref{figEstPoor} is that 
+the blue line, which represents the first experiment, jumps to another value after a stable result. 
+Considering the result of another two experiment shown in this figure, we can say that the diffusion coefficient jumps from a true field value, 
+and there are no signs show that this coefficient will jump back to reach consensus. 
+I think we may need more discussions on this estimation coefficient. \\
+I have recorded time series in those experiment. 
+However, as shown in figure \ref{figEstGood} and figure \ref{figEstPoor}, it is hard to define a consensus speed for those coefficient, especially for 
+experiment 1, because we cannot garantee that the estimation value will no longer jump again. 
+And for other experimental attempts, the consensus time of the estimation seems random or in some case they consensus too fast.
+\\
+For concentration errors, all the results seems reasonable. 
+In figure \ref{figErrGood} and figure \ref{figErrPoor}, a possible sensor failure may cause the sudden change of the estimation error. 
+These kinds of error may not influence the tracking and the estimation our agents.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{ErrorresultGood} 
+\caption{Concentration Estimation Error of Khepera Robot}\label{figErrGood}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm]{ErrorresultPoor} 
+\caption{Concentration Estimation Error of Khepera Robot}\label{figErrPoor}
+\end{figure}
+\end{document}
